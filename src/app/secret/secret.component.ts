@@ -8,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class SecretComponent implements OnInit {
   contentCreated = false;
   allowNewContent = false;
-  counter = 0;
   status: string = 'none';
+  counters = []
 
   constructor() { 
 
@@ -20,12 +20,8 @@ export class SecretComponent implements OnInit {
 
   onCreateContent() {
     this.contentCreated = !this.contentCreated;
-    this.counter += 1;
-    this.status = this.counter > 5 ? 'class' : 'none'
-  }
-
-  getColor() {
-    return this.status === 'class' ? 'dodgerBlue' : 'white'
+    this.status = this.counters.length >= 5 ? 'class' : 'none';
+    this.counters.push(this.counters.length + 1)
   }
 
 }
