@@ -21,7 +21,8 @@ export class SecretComponent implements OnInit {
   onCreateContent() {
     this.contentCreated = !this.contentCreated;
     this.status = this.counters.length >= 5 ? 'class' : 'none';
-    this.counters.push(this.counters.length + 1)
+    // this.counters.push(this.counters.length + 1)
+    this.counters.push(new Date())
   }
 
 }
